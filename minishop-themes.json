@@ -3,6 +3,9 @@
   "themes": [
     {
       "path": "liquid"
+    },
+    {
+      "path": "liquid-pink"
     }
   ]
 }
