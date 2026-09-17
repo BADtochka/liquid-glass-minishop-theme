@@ -21,7 +21,7 @@
   font-display: swap;
 }
 
-.theme-key-liquid-pin {
+.theme-key-liquid-pink {
   color-scheme: dark;
 
   /* Typography: local Onest for UI, local Unbounded for the home display face. */
@@ -84,33 +84,33 @@
 }
 
 /* ---------- Typography ---------- */
-.theme-key-liquid-pin,
-body:has(.theme-key-liquid-pin) {
+.theme-key-liquid-pink,
+body:has(.theme-key-liquid-pink) {
   --font-sans: "Onest", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   --font-ui: var(--font-country-flags), "Onest", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   font-family: var(--font-ui);
 }
 
-.theme-key-liquid-pin,
-.theme-key-liquid-pin button,
-.theme-key-liquid-pin input,
-.theme-key-liquid-pin textarea,
-.theme-key-liquid-pin select,
-body:has(.theme-key-liquid-pin) [data-portal],
-body:has(.theme-key-liquid-pin) [role="dialog"],
-body:has(.theme-key-liquid-pin) [role="listbox"] {
+.theme-key-liquid-pink,
+.theme-key-liquid-pink button,
+.theme-key-liquid-pink input,
+.theme-key-liquid-pink textarea,
+.theme-key-liquid-pink select,
+body:has(.theme-key-liquid-pink) [data-portal],
+body:has(.theme-key-liquid-pink) [role="dialog"],
+body:has(.theme-key-liquid-pink) [role="listbox"] {
   font-family: var(--font-ui);
 }
 
 /* Telegram / Android WebView interaction hygiene. WebKit otherwise paints a
  * rectangular system tap highlight over buttons and navigation items. */
-html:has(.theme-key-liquid-pin),
-body:has(.theme-key-liquid-pin),
-.theme-key-liquid-pin {
+html:has(.theme-key-liquid-pink),
+body:has(.theme-key-liquid-pink),
+.theme-key-liquid-pink {
   -webkit-tap-highlight-color: transparent;
 }
 
-.theme-key-liquid-pin :is(
+.theme-key-liquid-pink :is(
   button,
   a,
   [role="button"],
@@ -126,7 +126,7 @@ body:has(.theme-key-liquid-pin),
 
 /* HomeScreen renders the brand heading as .home-brand > h1. Keep the display
  * face scoped to that title so admin and secondary page headings stay Onest. */
-.theme-key-liquid-pin .home-layout .home-brand > h1 {
+.theme-key-liquid-pink .home-layout .home-brand > h1 {
   font-family: var(--lg-font-display);
   font-weight: 650;
   font-size: clamp(2rem, 8.4vw, 3.35rem);
@@ -137,7 +137,7 @@ body:has(.theme-key-liquid-pin),
 }
 
 /* ---------- Full-canvas background ---------- */
-.theme-key-liquid-pin.app-shell {
+.theme-key-liquid-pink.app-shell {
   position: relative;
   isolation: isolate;
   background: #07090d !important;
@@ -145,8 +145,8 @@ body:has(.theme-key-liquid-pin),
 
 /* The source kit used a dedicated fixed scene layer. A pseudo-element keeps
  * the same model without changing Minishop markup. */
-.theme-key-liquid-pin.app-shell::before,
-.theme-key-liquid-pin.app-shell::after {
+.theme-key-liquid-pink.app-shell::before,
+.theme-key-liquid-pink.app-shell::after {
   content: "";
   position: fixed;
   inset: -4vh -4vw;
@@ -154,7 +154,7 @@ body:has(.theme-key-liquid-pin),
   pointer-events: none;
 }
 
-.theme-key-liquid-pin.app-shell::before {
+.theme-key-liquid-pink.app-shell::before {
   background: url("./assets/background.webp") center / cover no-repeat;
   opacity: .50;
   filter: contrast(1.03) brightness(.50) grayscale(.60);
@@ -163,7 +163,7 @@ body:has(.theme-key-liquid-pin),
   will-change: transform;
 }
 
-.theme-key-liquid-pin.app-shell::after {
+.theme-key-liquid-pink.app-shell::after {
   background:
     radial-gradient(120% 72% at 50% -12%, rgba(255,255,255,.055) 0%, rgba(255,255,255,.018) 34%, transparent 66%),
     linear-gradient(180deg, rgba(255,255,255,.012) 0%, transparent 22%, transparent 68%, rgba(0,0,0,.24) 100%);
@@ -172,32 +172,32 @@ body:has(.theme-key-liquid-pin),
 /* Keep ordinary screen content above the fixed scene without changing the
  * positioning model of Minishop overlays. The previous universal child rule
  * forced .dialog and .admin-screen-wrap from fixed to relative. */
-.theme-key-liquid-pin.app-shell > .phone-screen {
+.theme-key-liquid-pink.app-shell > .phone-screen {
   z-index: 1;
 }
 
-.theme-key-liquid-pin.app-shell > .public-install-shell {
+.theme-key-liquid-pink.app-shell > .public-install-shell {
   position: relative;
   z-index: 1;
 }
 
 /* Preserve Minishop's native viewport overlay geometry even when a dialog is
  * mounted directly under the themed shell or through a portal. */
-.theme-key-liquid-pin .dialog,
-body:has(.theme-key-liquid-pin) .dialog {
+.theme-key-liquid-pink .dialog,
+body:has(.theme-key-liquid-pink) .dialog {
   position: fixed !important;
   inset: 0 !important;
   z-index: 220;
 }
 
-@keyframes liquid-pink-background-parallax {
+@keyframes liquid-pinkk-background-parallax {
   from { transform: scale(1.12) translate3d(0, -3.5%, 0); }
   to   { transform: scale(1.12) translate3d(0, 3.5%, 0); }
 }
 
 @supports (animation-timeline: scroll()) {
-  .theme-key-liquid-pin.app-shell::before {
-    animation: liquid-pink-background-parallax 1ms linear both;
+  .theme-key-liquid-pink.app-shell::before {
+    animation: liquid-pinkk-background-parallax 1ms linear both;
     animation-timeline: scroll(root block);
     animation-range: 0% 100%;
   }
@@ -206,82 +206,82 @@ body:has(.theme-key-liquid-pin) .dialog {
 /* Touch scroll can rubber-band around the root scroller. On compact/coarse
  * devices use a fixed physical timeline instead of mapping motion to the
  * document's total scroll length, and reduce the travel amplitude. */
-@keyframes liquid-pink-background-parallax-mobile {
+@keyframes liquid-pinkk-background-parallax-mobile {
   from { transform: scale(1.10) translate3d(0, -1.2%, 0); }
   to   { transform: scale(1.10) translate3d(0, 1.2%, 0); }
 }
 
 @media (max-width: 767px), (pointer: coarse) {
   @supports (animation-timeline: scroll()) {
-    .theme-key-liquid-pin.app-shell::before {
-      animation-name: liquid-pink-background-parallax-mobile;
+    .theme-key-liquid-pink.app-shell::before {
+      animation-name: liquid-pinkk-background-parallax-mobile;
       animation-range: 0px 120dvh;
     }
   }
 }
 
 /* ---------- Shared glass material ---------- */
-.theme-key-liquid-pin .card,
-.theme-key-liquid-pin .trial-card-facts span,
-.theme-key-liquid-pin .trial-activation-facts div,
-.theme-key-liquid-pin .period-card,
-.theme-key-liquid-pin .method-card,
-.theme-key-liquid-pin .settings-row,
-.theme-key-liquid-pin .option-row,
-.theme-key-liquid-pin .tariff-selected-card,
-.theme-key-liquid-pin .tariff-action-card,
-.theme-key-liquid-pin .tariff-warning-card,
-.theme-key-liquid-pin .topup-carryover-note,
-.theme-key-liquid-pin .subscription-purchase-description,
-.theme-key-liquid-pin .pending-payment-card,
-.theme-key-liquid-pin .checkout-tariff-card,
-.theme-key-liquid-pin .checkout-tariff-editor-fact,
-.theme-key-liquid-pin .dialog-card,
-.theme-key-liquid-pin .language-select-content,
-.theme-key-liquid-pin .bottom-nav,
-.theme-key-liquid-pin .auth-card,
-.theme-key-liquid-pin .support-overview-card,
-.theme-key-liquid-pin .support-list-card,
-.theme-key-liquid-pin .support-ticket-card,
-.theme-key-liquid-pin .support-conversation-card,
-.theme-key-liquid-pin .support-new-ticket-button,
-.theme-key-liquid-pin .support-create-panel,
-.theme-key-liquid-pin .support-select-trigger,
-.theme-key-liquid-pin .support-select-content,
-.theme-key-liquid-pin .support-status-tabs-list,
-.theme-key-liquid-pin .support-user-ticket-skeleton,
-.theme-key-liquid-pin .ticket-card,
-.theme-key-liquid-pin .support-empty-state,
-.theme-key-liquid-pin .support-message-scroll,
-.theme-key-liquid-pin .support-admin-message-scroll,
-.theme-key-liquid-pin .ticket-message-avatar,
-.theme-key-liquid-pin .ticket-message-bubble,
-.theme-key-liquid-pin .ticket-composer,
-.theme-key-liquid-pin .install-platform-trigger,
-.theme-key-liquid-pin .install-app-button,
-.theme-key-liquid-pin .install-step,
-.theme-key-liquid-pin .install-subscription-card,
-.theme-key-liquid-pin .install-qr-wrap,
-.theme-key-liquid-pin .install-loading,
-.theme-key-liquid-pin .admin-sidebar,
-.theme-key-liquid-pin .admin-header,
-.theme-key-liquid-pin .admin-card,
-.theme-key-liquid-pin .admin-stat-card,
-.theme-key-liquid-pin .admin-revenue-panel,
-.theme-key-liquid-pin .admin-empty,
-.theme-key-liquid-pin .admin-tariff-card,
-.theme-key-liquid-pin .admin-toolbar-card,
-.theme-key-liquid-pin .admin-table-card,
-.theme-key-liquid-pin .admin-panel-dash-card,
-.theme-key-liquid-pin .admin-config-alerts,
-.theme-key-liquid-pin .admin-select-trigger,
-.theme-key-liquid-pin .admin-select-content,
-.theme-key-liquid-pin .admin-cn-card[data-slot="card"],
-.theme-key-liquid-pin .admin-dialog .dialog-card,
-.theme-key-liquid-pin .admin-theme-card,
-.theme-key-liquid-pin .default-theme-editor,
-.theme-key-liquid-pin .default-theme-panel,
-.theme-key-liquid-pin .appearance-control-card {
+.theme-key-liquid-pink .card,
+.theme-key-liquid-pink .trial-card-facts span,
+.theme-key-liquid-pink .trial-activation-facts div,
+.theme-key-liquid-pink .period-card,
+.theme-key-liquid-pink .method-card,
+.theme-key-liquid-pink .settings-row,
+.theme-key-liquid-pink .option-row,
+.theme-key-liquid-pink .tariff-selected-card,
+.theme-key-liquid-pink .tariff-action-card,
+.theme-key-liquid-pink .tariff-warning-card,
+.theme-key-liquid-pink .topup-carryover-note,
+.theme-key-liquid-pink .subscription-purchase-description,
+.theme-key-liquid-pink .pending-payment-card,
+.theme-key-liquid-pink .checkout-tariff-card,
+.theme-key-liquid-pink .checkout-tariff-editor-fact,
+.theme-key-liquid-pink .dialog-card,
+.theme-key-liquid-pink .language-select-content,
+.theme-key-liquid-pink .bottom-nav,
+.theme-key-liquid-pink .auth-card,
+.theme-key-liquid-pink .support-overview-card,
+.theme-key-liquid-pink .support-list-card,
+.theme-key-liquid-pink .support-ticket-card,
+.theme-key-liquid-pink .support-conversation-card,
+.theme-key-liquid-pink .support-new-ticket-button,
+.theme-key-liquid-pink .support-create-panel,
+.theme-key-liquid-pink .support-select-trigger,
+.theme-key-liquid-pink .support-select-content,
+.theme-key-liquid-pink .support-status-tabs-list,
+.theme-key-liquid-pink .support-user-ticket-skeleton,
+.theme-key-liquid-pink .ticket-card,
+.theme-key-liquid-pink .support-empty-state,
+.theme-key-liquid-pink .support-message-scroll,
+.theme-key-liquid-pink .support-admin-message-scroll,
+.theme-key-liquid-pink .ticket-message-avatar,
+.theme-key-liquid-pink .ticket-message-bubble,
+.theme-key-liquid-pink .ticket-composer,
+.theme-key-liquid-pink .install-platform-trigger,
+.theme-key-liquid-pink .install-app-button,
+.theme-key-liquid-pink .install-step,
+.theme-key-liquid-pink .install-subscription-card,
+.theme-key-liquid-pink .install-qr-wrap,
+.theme-key-liquid-pink .install-loading,
+.theme-key-liquid-pink .admin-sidebar,
+.theme-key-liquid-pink .admin-header,
+.theme-key-liquid-pink .admin-card,
+.theme-key-liquid-pink .admin-stat-card,
+.theme-key-liquid-pink .admin-revenue-panel,
+.theme-key-liquid-pink .admin-empty,
+.theme-key-liquid-pink .admin-tariff-card,
+.theme-key-liquid-pink .admin-toolbar-card,
+.theme-key-liquid-pink .admin-table-card,
+.theme-key-liquid-pink .admin-panel-dash-card,
+.theme-key-liquid-pink .admin-config-alerts,
+.theme-key-liquid-pink .admin-select-trigger,
+.theme-key-liquid-pink .admin-select-content,
+.theme-key-liquid-pink .admin-cn-card[data-slot="card"],
+.theme-key-liquid-pink .admin-dialog .dialog-card,
+.theme-key-liquid-pink .admin-theme-card,
+.theme-key-liquid-pink .default-theme-editor,
+.theme-key-liquid-pink .default-theme-panel,
+.theme-key-liquid-pink .appearance-control-card {
   border-color: var(--lg-line-soft);
   background:
     linear-gradient(145deg, rgba(255,255,255,var(--lg-glass-hi)), rgba(255,255,255,.025) 48%, rgba(255,255,255,.07)),
@@ -295,28 +295,28 @@ body:has(.theme-key-liquid-pin) .dialog {
 }
 
 /* Stable luminance floor for information-dense areas. */
-.theme-key-liquid-pin .admin-table-card,
-.theme-key-liquid-pin .admin-revenue-panel,
-.theme-key-liquid-pin .support-message-scroll,
-.theme-key-liquid-pin .support-admin-message-scroll,
-.theme-key-liquid-pin .ticket-composer,
-.theme-key-liquid-pin .checkout-tariff-card,
-.theme-key-liquid-pin .pending-payment-card {
+.theme-key-liquid-pink .admin-table-card,
+.theme-key-liquid-pink .admin-revenue-panel,
+.theme-key-liquid-pink .support-message-scroll,
+.theme-key-liquid-pink .support-admin-message-scroll,
+.theme-key-liquid-pink .ticket-composer,
+.theme-key-liquid-pink .checkout-tariff-card,
+.theme-key-liquid-pink .pending-payment-card {
   background:
     linear-gradient(145deg, rgba(255,255,255,.13), rgba(255,255,255,.02) 46%, rgba(255,255,255,.055)),
     rgba(7,14,24,.42);
 }
 
 /* ---------- Cards and clickable surfaces ---------- */
-.theme-key-liquid-pin .card,
-.theme-key-liquid-pin .period-card,
-.theme-key-liquid-pin .method-card,
-.theme-key-liquid-pin .settings-row,
-.theme-key-liquid-pin .option-row,
-.theme-key-liquid-pin .ticket-card,
-.theme-key-liquid-pin .support-new-ticket-button,
-.theme-key-liquid-pin .install-app-button,
-.theme-key-liquid-pin .device-card {
+.theme-key-liquid-pink .card,
+.theme-key-liquid-pink .period-card,
+.theme-key-liquid-pink .method-card,
+.theme-key-liquid-pink .settings-row,
+.theme-key-liquid-pink .option-row,
+.theme-key-liquid-pink .ticket-card,
+.theme-key-liquid-pink .support-new-ticket-button,
+.theme-key-liquid-pink .install-app-button,
+.theme-key-liquid-pink .device-card {
   transition:
     transform var(--lg-fast) var(--lg-ease),
     border-color var(--lg-motion) var(--lg-ease-soft),
@@ -325,15 +325,15 @@ body:has(.theme-key-liquid-pin) .dialog {
     filter var(--lg-motion) var(--lg-ease-soft);
 }
 
-.theme-key-liquid-pin .traffic-card-clickable:hover,
-.theme-key-liquid-pin .settings-row:hover,
-.theme-key-liquid-pin .option-row:hover,
-.theme-key-liquid-pin .method-card:hover:not(:disabled),
-.theme-key-liquid-pin .period-card:hover,
-.theme-key-liquid-pin .ticket-card:hover,
-.theme-key-liquid-pin .support-new-ticket-button:hover,
-.theme-key-liquid-pin .install-app-button:hover:not(:disabled),
-.theme-key-liquid-pin .device-card:hover {
+.theme-key-liquid-pink .traffic-card-clickable:hover,
+.theme-key-liquid-pink .settings-row:hover,
+.theme-key-liquid-pink .option-row:hover,
+.theme-key-liquid-pink .method-card:hover:not(:disabled),
+.theme-key-liquid-pink .period-card:hover,
+.theme-key-liquid-pink .ticket-card:hover,
+.theme-key-liquid-pink .support-new-ticket-button:hover,
+.theme-key-liquid-pink .install-app-button:hover:not(:disabled),
+.theme-key-liquid-pink .device-card:hover {
   border-color: rgba(255,255,255,.20);
   box-shadow:
     var(--lg-shadow-hover),
@@ -343,25 +343,25 @@ body:has(.theme-key-liquid-pin) .dialog {
   transform: translateY(-1px);
 }
 
-.theme-key-liquid-pin .period-card:active,
-.theme-key-liquid-pin .method-card:active:not(:disabled),
-.theme-key-liquid-pin .settings-row:active,
-.theme-key-liquid-pin .option-row:active,
-.theme-key-liquid-pin .ticket-card:active,
-.theme-key-liquid-pin .support-new-ticket-button:active,
-.theme-key-liquid-pin .install-app-button:active:not(:disabled) {
+.theme-key-liquid-pink .period-card:active,
+.theme-key-liquid-pink .method-card:active:not(:disabled),
+.theme-key-liquid-pink .settings-row:active,
+.theme-key-liquid-pink .option-row:active,
+.theme-key-liquid-pink .ticket-card:active,
+.theme-key-liquid-pink .support-new-ticket-button:active,
+.theme-key-liquid-pink .install-app-button:active:not(:disabled) {
   transform: translateY(0) scale(.985);
   filter: brightness(.95);
   transition-duration: 110ms;
 }
 
-.theme-key-liquid-pin .card-active,
-.theme-key-liquid-pin .period-card.active,
-.theme-key-liquid-pin .method-card.active,
-.theme-key-liquid-pin .option-row.active,
-.theme-key-liquid-pin .install-app-button.active,
-.theme-key-liquid-pin .support-status-tabs-trigger[data-state="active"],
-.theme-key-liquid-pin .partner-tabs-trigger[data-state="active"] {
+.theme-key-liquid-pink .card-active,
+.theme-key-liquid-pink .period-card.active,
+.theme-key-liquid-pink .method-card.active,
+.theme-key-liquid-pink .option-row.active,
+.theme-key-liquid-pink .install-app-button.active,
+.theme-key-liquid-pink .support-status-tabs-trigger[data-state="active"],
+.theme-key-liquid-pink .partner-tabs-trigger[data-state="active"] {
   border-color: color-mix(in srgb, var(--accent) 42%, rgba(255,255,255,.20));
   background:
     linear-gradient(145deg, color-mix(in srgb, var(--accent) 16%, rgba(255,255,255,.12)), rgba(255,255,255,.025) 52%),
@@ -373,12 +373,12 @@ body:has(.theme-key-liquid-pin) .dialog {
 }
 
 /* ---------- Buttons: kit motion + Minishop accent semantics ---------- */
-.theme-key-liquid-pin .btn,
-.theme-key-liquid-pin .admin-btn,
-.theme-key-liquid-pin .admin-tabs-trigger,
-.theme-key-liquid-pin .admin-revenue-period-btn,
-.theme-key-liquid-pin .support-status-tabs-trigger,
-.theme-key-liquid-pin .partner-tabs-trigger {
+.theme-key-liquid-pink .btn,
+.theme-key-liquid-pink .admin-btn,
+.theme-key-liquid-pink .admin-tabs-trigger,
+.theme-key-liquid-pink .admin-revenue-period-btn,
+.theme-key-liquid-pink .support-status-tabs-trigger,
+.theme-key-liquid-pink .partner-tabs-trigger {
   border-color: rgba(255,255,255,.09);
   background-color: rgba(255,255,255,.065);
   background-image: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.008));
@@ -395,10 +395,10 @@ body:has(.theme-key-liquid-pin) .dialog {
     filter var(--lg-motion) var(--lg-ease-soft);
 }
 
-.theme-key-liquid-pin .btn:hover:not(:disabled),
-.theme-key-liquid-pin .admin-btn:hover:not(:disabled),
-.theme-key-liquid-pin .admin-tabs-trigger:hover,
-.theme-key-liquid-pin .admin-revenue-period-btn:hover {
+.theme-key-liquid-pink .btn:hover:not(:disabled),
+.theme-key-liquid-pink .admin-btn:hover:not(:disabled),
+.theme-key-liquid-pink .admin-tabs-trigger:hover,
+.theme-key-liquid-pink .admin-revenue-period-btn:hover {
   background-color: rgba(255,255,255,.115);
   border-color: rgba(255,255,255,.14);
   box-shadow:
@@ -409,10 +409,10 @@ body:has(.theme-key-liquid-pin) .dialog {
   transform: translateY(-1px);
 }
 
-.theme-key-liquid-pin .btn:active:not(:disabled),
-.theme-key-liquid-pin .admin-btn:active:not(:disabled),
-.theme-key-liquid-pin .admin-tabs-trigger:active,
-.theme-key-liquid-pin .admin-revenue-period-btn:active {
+.theme-key-liquid-pink .btn:active:not(:disabled),
+.theme-key-liquid-pink .admin-btn:active:not(:disabled),
+.theme-key-liquid-pink .admin-tabs-trigger:active,
+.theme-key-liquid-pink .admin-revenue-period-btn:active {
   transform: translateY(0) scale(.965);
   background-color: rgba(255,255,255,.075);
   box-shadow:
@@ -424,7 +424,7 @@ body:has(.theme-key-liquid-pin) .dialog {
 }
 
 /* ---------- Admin rail: same interaction language as the user rail ---------- */
-.theme-key-liquid-pin .admin-nav-item {
+.theme-key-liquid-pink .admin-nav-item {
   border-color: transparent !important;
   border-radius: 14px;
   background: transparent !important;
@@ -440,7 +440,7 @@ body:has(.theme-key-liquid-pin) .dialog {
     color var(--lg-fast) ease;
 }
 
-.theme-key-liquid-pin .admin-nav-item:hover {
+.theme-key-liquid-pink .admin-nav-item:hover {
   border-color: transparent !important;
   background: rgba(255,255,255,.065) !important;
   color: var(--admin-text, var(--text));
@@ -448,7 +448,7 @@ body:has(.theme-key-liquid-pin) .dialog {
   transform: translateY(-1px);
 }
 
-.theme-key-liquid-pin .admin-nav-item.active {
+.theme-key-liquid-pink .admin-nav-item.active {
   border-color: rgba(255,255,255,.10) !important;
   background:
     linear-gradient(
@@ -462,14 +462,14 @@ body:has(.theme-key-liquid-pin) .dialog {
     inset 0 1px 0 rgba(255,255,255,.10) !important;
 }
 
-.theme-key-liquid-pin .admin-nav-item:active {
+.theme-key-liquid-pink .admin-nav-item:active {
   transform: scale(.97);
   background: rgba(255,255,255,.045) !important;
   box-shadow: inset 0 2px 6px rgba(0,0,0,.10) !important;
 }
 
 @media (min-width: 1024px) {
-  .theme-key-liquid-pin .admin-sidebar {
+  .theme-key-liquid-pink .admin-sidebar {
     border: 0 !important;
     border-right: 1px solid rgba(255,255,255,.13) !important;
     border-radius: 0 !important;
@@ -484,7 +484,7 @@ body:has(.theme-key-liquid-pin) .dialog {
   }
 }
 
-.theme-key-liquid-pin .btn.btn-primary {
+.theme-key-liquid-pink .btn.btn-primary {
   border-color: color-mix(in srgb, var(--accent) 24%, rgba(255,255,255,.14));
   background:
     linear-gradient(145deg, color-mix(in srgb, var(--accent) 13%, rgba(255,255,255,.09)), rgba(255,255,255,.025) 58%),
@@ -499,22 +499,22 @@ body:has(.theme-key-liquid-pin) .dialog {
     inset 0 0 0 1px rgba(255,255,255,.025);
 }
 
-.theme-key-liquid-pin .btn.btn-primary:hover:not(:disabled) {
+.theme-key-liquid-pink .btn.btn-primary:hover:not(:disabled) {
   border-color: color-mix(in srgb, var(--accent) 34%, rgba(255,255,255,.17));
   background:
     linear-gradient(145deg, color-mix(in srgb, var(--accent) 18%, rgba(255,255,255,.105)), rgba(255,255,255,.035) 58%),
     rgba(7,13,20,.34);
 }
 
-.theme-key-liquid-pin .btn.btn-primary:active:not(:disabled) {
+.theme-key-liquid-pink .btn.btn-primary:active:not(:disabled) {
   transform: translateY(0) scale(.965);
   filter: brightness(.96);
   transition-duration: 110ms;
 }
 
 /* Admin primary buttons intentionally mirror the active item in the user sidebar. */
-.theme-key-liquid-pin .admin-btn.admin-btn-primary,
-.theme-key-liquid-pin .admin-extend-control .admin-btn.admin-btn-primary {
+.theme-key-liquid-pink .admin-btn.admin-btn-primary,
+.theme-key-liquid-pink .admin-extend-control .admin-btn.admin-btn-primary {
   border-color: rgba(255,255,255,.10) !important;
   background:
     linear-gradient(
@@ -531,8 +531,8 @@ body:has(.theme-key-liquid-pin) .dialog {
     inset 0 1px 0 rgba(255,255,255,.10) !important;
 }
 
-.theme-key-liquid-pin .admin-btn.admin-btn-primary:hover:not(:disabled),
-.theme-key-liquid-pin .admin-extend-control .admin-btn.admin-btn-primary:hover:not(:disabled) {
+.theme-key-liquid-pink .admin-btn.admin-btn-primary:hover:not(:disabled),
+.theme-key-liquid-pink .admin-extend-control .admin-btn.admin-btn-primary:hover:not(:disabled) {
   border-color: rgba(255,255,255,.12) !important;
   background:
     linear-gradient(
@@ -546,8 +546,8 @@ body:has(.theme-key-liquid-pin) .dialog {
     inset 0 1px 0 rgba(255,255,255,.13) !important;
 }
 
-.theme-key-liquid-pin .admin-btn.admin-btn-primary:active:not(:disabled),
-.theme-key-liquid-pin .admin-extend-control .admin-btn.admin-btn-primary:active:not(:disabled) {
+.theme-key-liquid-pink .admin-btn.admin-btn-primary:active:not(:disabled),
+.theme-key-liquid-pink .admin-extend-control .admin-btn.admin-btn-primary:active:not(:disabled) {
   border-color: rgba(255,255,255,.08) !important;
   background:
     linear-gradient(
@@ -561,25 +561,25 @@ body:has(.theme-key-liquid-pin) .dialog {
   transition-duration: 110ms;
 }
 
-.theme-key-liquid-pin .btn-secondary {
+.theme-key-liquid-pink .btn-secondary {
   border-color: rgba(255,255,255,.11);
   background: rgba(255,255,255,.065);
 }
 
-.theme-key-liquid-pin .btn-outline,
-.theme-key-liquid-pin .btn-ghost {
+.theme-key-liquid-pink .btn-outline,
+.theme-key-liquid-pink .btn-ghost {
   background: rgba(255,255,255,.025);
 }
 
 /* ---------- Inputs / selects / text areas ---------- */
-.theme-key-liquid-pin .input,
-.theme-key-liquid-pin .textarea,
-.theme-key-liquid-pin .admin-input,
-.theme-key-liquid-pin .admin-textarea,
-.theme-key-liquid-pin .admin-screen-wrap textarea,
-.theme-key-liquid-pin .admin-dialog textarea,
-.theme-key-liquid-pin .payment-method-select-trigger,
-.theme-key-liquid-pin .support-select-trigger {
+.theme-key-liquid-pink .input,
+.theme-key-liquid-pink .textarea,
+.theme-key-liquid-pink .admin-input,
+.theme-key-liquid-pink .admin-textarea,
+.theme-key-liquid-pink .admin-screen-wrap textarea,
+.theme-key-liquid-pink .admin-dialog textarea,
+.theme-key-liquid-pink .payment-method-select-trigger,
+.theme-key-liquid-pink .support-select-trigger {
   border-color: rgba(255,255,255,.13);
   background: var(--lg-field);
   color: var(--text);
@@ -595,15 +595,15 @@ body:has(.theme-key-liquid-pin) .dialog {
     transform var(--lg-fast) var(--lg-ease);
 }
 
-.theme-key-liquid-pin .input:focus,
-.theme-key-liquid-pin .textarea:focus,
-.theme-key-liquid-pin .admin-input:focus,
-.theme-key-liquid-pin .admin-textarea:focus,
-.theme-key-liquid-pin .admin-screen-wrap textarea:focus,
-.theme-key-liquid-pin .admin-dialog textarea:focus,
-.theme-key-liquid-pin .payment-method-select-trigger:focus-visible,
-.theme-key-liquid-pin .payment-method-select-trigger[data-state="open"],
-.theme-key-liquid-pin .support-select-trigger:focus-visible {
+.theme-key-liquid-pink .input:focus,
+.theme-key-liquid-pink .textarea:focus,
+.theme-key-liquid-pink .admin-input:focus,
+.theme-key-liquid-pink .admin-textarea:focus,
+.theme-key-liquid-pink .admin-screen-wrap textarea:focus,
+.theme-key-liquid-pink .admin-dialog textarea:focus,
+.theme-key-liquid-pink .payment-method-select-trigger:focus-visible,
+.theme-key-liquid-pink .payment-method-select-trigger[data-state="open"],
+.theme-key-liquid-pink .support-select-trigger:focus-visible {
   outline: none;
   border-color: rgba(255,255,255,.34);
   background: var(--lg-field-hover);
@@ -613,19 +613,19 @@ body:has(.theme-key-liquid-pin) .dialog {
     inset 0 1px 0 rgba(255,255,255,.12);
 }
 
-.theme-key-liquid-pin .input::placeholder,
-.theme-key-liquid-pin .textarea::placeholder,
-.theme-key-liquid-pin .admin-input::placeholder,
-.theme-key-liquid-pin .admin-textarea::placeholder {
+.theme-key-liquid-pink .input::placeholder,
+.theme-key-liquid-pink .textarea::placeholder,
+.theme-key-liquid-pink .admin-input::placeholder,
+.theme-key-liquid-pink .admin-textarea::placeholder {
   color: var(--dim);
 }
 
 /* Remove the harsh default focus outline while retaining a visible glass ring. */
-.theme-key-liquid-pin button:focus-visible,
-.theme-key-liquid-pin a:focus-visible,
-.theme-key-liquid-pin select:focus-visible,
-.theme-key-liquid-pin input:focus-visible,
-.theme-key-liquid-pin [role="button"]:focus-visible {
+.theme-key-liquid-pink button:focus-visible,
+.theme-key-liquid-pink a:focus-visible,
+.theme-key-liquid-pink select:focus-visible,
+.theme-key-liquid-pink input:focus-visible,
+.theme-key-liquid-pink [role="button"]:focus-visible {
   outline: 0;
   box-shadow:
     0 0 0 3px rgba(174,221,255,.13),
@@ -633,7 +633,7 @@ body:has(.theme-key-liquid-pin) .dialog {
 }
 
 /* ---------- Floating navigation / rail ---------- */
-.theme-key-liquid-pin .bottom-nav {
+.theme-key-liquid-pink .bottom-nav {
   border-color: rgba(255,255,255,.14);
   border-radius: 22px;
   background:
@@ -647,7 +647,7 @@ body:has(.theme-key-liquid-pin) .dialog {
     inset 0 -1px 0 rgba(255,255,255,.04);
 }
 
-.theme-key-liquid-pin .bottom-nav button {
+.theme-key-liquid-pink .bottom-nav button {
   border-radius: 15px;
   transition:
     transform var(--lg-fast) var(--lg-ease),
@@ -656,13 +656,13 @@ body:has(.theme-key-liquid-pin) .dialog {
     box-shadow var(--lg-motion) var(--lg-ease-soft);
 }
 
-.theme-key-liquid-pin .bottom-nav button:hover {
+.theme-key-liquid-pink .bottom-nav button:hover {
   background: rgba(255,255,255,.065);
   color: var(--text);
   transform: translateY(-1px);
 }
 
-.theme-key-liquid-pin .bottom-nav button.active {
+.theme-key-liquid-pink .bottom-nav button.active {
   border-color: rgba(255,255,255,.08);
   background: rgba(255,255,255,.105);
   color: var(--text);
@@ -671,14 +671,14 @@ body:has(.theme-key-liquid-pin) .dialog {
     inset 0 1px 0 rgba(255,255,255,.10);
 }
 
-.theme-key-liquid-pin .bottom-nav button:active {
+.theme-key-liquid-pink .bottom-nav button:active {
   transform: scale(.94);
   background: rgba(255,255,255,.045);
   box-shadow: inset 0 2px 6px rgba(0,0,0,.10);
 }
 
 @media (min-width: 1024px) {
-  .theme-key-liquid-pin .bottom-nav {
+  .theme-key-liquid-pink .bottom-nav {
     border-right: 1px solid rgba(255,255,255,.13) !important;
     background:
       radial-gradient(110% 50% at 0% 0%, rgba(255,255,255,.08), transparent 58%),
@@ -690,11 +690,11 @@ body:has(.theme-key-liquid-pin) .dialog {
       inset -1px 0 0 rgba(255,255,255,.04) !important;
   }
 
-  .theme-key-liquid-pin .bottom-nav button {
+  .theme-key-liquid-pink .bottom-nav button {
     border-radius: 14px !important;
   }
 
-  .theme-key-liquid-pin .bottom-nav button.active {
+  .theme-key-liquid-pink .bottom-nav button.active {
     border-color: rgba(255,255,255,.10) !important;
     background:
       linear-gradient(145deg, color-mix(in srgb, var(--accent) 13%, rgba(255,255,255,.09)), rgba(255,255,255,.035)) !important;
@@ -705,7 +705,7 @@ body:has(.theme-key-liquid-pin) .dialog {
 /* ---------- Compact home summary ---------- */
 /* The traffic scope help is information-dense; keep a strong luminance floor
  * instead of mixing an already translucent --panel with transparent. */
-.theme-key-liquid-pin .compact-traffic-help {
+.theme-key-liquid-pink .compact-traffic-help {
   border-color: color-mix(in srgb, var(--accent) 34%, rgba(255,255,255,.18));
   background:
     linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.025) 52%),
@@ -720,7 +720,7 @@ body:has(.theme-key-liquid-pin) .dialog {
 
 /* The tiny question-mark button must stay an icon control, not inherit the
  * full glass-button chrome. This also prevents it from stealing label width. */
-.theme-key-liquid-pin section.home-compact-summary .compact-traffic-help-trigger.btn {
+.theme-key-liquid-pink section.home-compact-summary .compact-traffic-help-trigger.btn {
   width: 18px;
   min-width: 18px;
   min-height: 18px;
@@ -736,7 +736,7 @@ body:has(.theme-key-liquid-pin) .dialog {
   transform: none;
 }
 
-.theme-key-liquid-pin section.home-compact-summary .compact-traffic-help-trigger.btn:hover:not(:disabled) {
+.theme-key-liquid-pink section.home-compact-summary .compact-traffic-help-trigger.btn:hover:not(:disabled) {
   border-color: transparent;
   background: rgba(255,255,255,.08);
   box-shadow: none;
@@ -745,11 +745,11 @@ body:has(.theme-key-liquid-pin) .dialog {
 }
 
 @media (max-width: 460px) {
-  .theme-key-liquid-pin section.home-compact-summary {
+  .theme-key-liquid-pink section.home-compact-summary {
     padding-inline: 9px;
   }
 
-  .theme-key-liquid-pin section.home-compact-summary .compact-traffic-label {
+  .theme-key-liquid-pink section.home-compact-summary .compact-traffic-label {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
@@ -757,7 +757,7 @@ body:has(.theme-key-liquid-pin) .dialog {
     font-size: 10px;
   }
 
-  .theme-key-liquid-pin section.home-compact-summary .compact-traffic-label > span {
+  .theme-key-liquid-pink section.home-compact-summary .compact-traffic-label > span {
     min-width: 0;
     display: flex;
     align-items: center;
@@ -765,18 +765,18 @@ body:has(.theme-key-liquid-pin) .dialog {
     overflow: hidden;
   }
 
-  .theme-key-liquid-pin section.home-compact-summary .compact-traffic-label > span > small {
+  .theme-key-liquid-pink section.home-compact-summary .compact-traffic-label > span > small {
     min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 
-  .theme-key-liquid-pin section.home-compact-summary .compact-traffic-label strong {
+  .theme-key-liquid-pink section.home-compact-summary .compact-traffic-label strong {
     font-size: 10px;
   }
 
-  .theme-key-liquid-pin section.home-compact-summary .compact-traffic-help-trigger.btn {
+  .theme-key-liquid-pink section.home-compact-summary .compact-traffic-help-trigger.btn {
     width: 16px;
     min-width: 16px;
     min-height: 16px;
@@ -784,21 +784,21 @@ body:has(.theme-key-liquid-pin) .dialog {
     flex-basis: 16px;
   }
 
-  .theme-key-liquid-pin section.home-compact-summary .compact-traffic-help {
+  .theme-key-liquid-pink section.home-compact-summary .compact-traffic-help {
     left: 0;
     right: 0;
   }
 }
 
 /* ---------- Popovers / dialogs / portals ---------- */
-.theme-key-liquid-pin .dialog-card,
-.theme-key-liquid-pin .app-toast,
-.theme-key-liquid-pin .language-select-content,
-.theme-key-liquid-pin .support-select-content,
-.theme-key-liquid-pin .payment-method-select-content,
-.theme-key-liquid-pin .payment-method-tooltip,
-.theme-key-liquid-pin .field-error-tooltip,
-.theme-key-liquid-pin .admin-select-content {
+.theme-key-liquid-pink .dialog-card,
+.theme-key-liquid-pink .app-toast,
+.theme-key-liquid-pink .language-select-content,
+.theme-key-liquid-pink .support-select-content,
+.theme-key-liquid-pink .payment-method-select-content,
+.theme-key-liquid-pink .payment-method-tooltip,
+.theme-key-liquid-pink .field-error-tooltip,
+.theme-key-liquid-pink .admin-select-content {
   border-color: rgba(255,255,255,.16);
   background:
     linear-gradient(145deg, rgba(255,255,255,.15), rgba(255,255,255,.025) 48%, rgba(255,255,255,.055)),
@@ -810,12 +810,12 @@ body:has(.theme-key-liquid-pin) .dialog {
     inset 0 1px 0 rgba(255,255,255,.23);
 }
 
-body:has(.theme-key-liquid-pin) .app-toast,
-body:has(.theme-key-liquid-pin) .language-select-content,
-body:has(.theme-key-liquid-pin) .support-select-content,
-body:has(.theme-key-liquid-pin) .install-platform-content,
-body:has(.theme-key-liquid-pin) .admin-select-content,
-body:has(.theme-key-liquid-pin) .field-error-tooltip {
+body:has(.theme-key-liquid-pink) .app-toast,
+body:has(.theme-key-liquid-pink) .language-select-content,
+body:has(.theme-key-liquid-pink) .support-select-content,
+body:has(.theme-key-liquid-pink) .install-platform-content,
+body:has(.theme-key-liquid-pink) .admin-select-content,
+body:has(.theme-key-liquid-pink) .field-error-tooltip {
   border-color: rgba(255,255,255,.16);
   background:
     linear-gradient(145deg, rgba(255,255,255,.15), rgba(255,255,255,.025) 48%, rgba(255,255,255,.055)),
@@ -828,30 +828,30 @@ body:has(.theme-key-liquid-pin) .field-error-tooltip {
     inset 0 1px 0 rgba(255,255,255,.23);
 }
 
-.theme-key-liquid-pin .dialog-backdrop,
-body:has(.theme-key-liquid-pin) .dialog-backdrop {
+.theme-key-liquid-pink .dialog-backdrop,
+body:has(.theme-key-liquid-pink) .dialog-backdrop {
   background: rgba(2,5,9,.42);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
 }
 
-body:has(.theme-key-liquid-pin) .language-select-item[data-highlighted],
-body:has(.theme-key-liquid-pin) .support-select-item[data-highlighted],
-body:has(.theme-key-liquid-pin) .install-platform-item[data-highlighted],
-body:has(.theme-key-liquid-pin) .admin-select-item[data-highlighted] {
+body:has(.theme-key-liquid-pink) .language-select-item[data-highlighted],
+body:has(.theme-key-liquid-pink) .support-select-item[data-highlighted],
+body:has(.theme-key-liquid-pink) .install-platform-item[data-highlighted],
+body:has(.theme-key-liquid-pink) .admin-select-item[data-highlighted] {
   background: rgba(255,255,255,.08);
 }
 
-body:has(.theme-key-liquid-pin) .language-select-item[data-selected],
-body:has(.theme-key-liquid-pin) .support-select-item[data-selected],
-body:has(.theme-key-liquid-pin) .install-platform-item[data-selected],
-body:has(.theme-key-liquid-pin) .admin-select-item[data-selected] {
+body:has(.theme-key-liquid-pink) .language-select-item[data-selected],
+body:has(.theme-key-liquid-pink) .support-select-item[data-selected],
+body:has(.theme-key-liquid-pink) .install-platform-item[data-selected],
+body:has(.theme-key-liquid-pink) .admin-select-item[data-selected] {
   background: color-mix(in srgb, var(--accent) 12%, rgba(255,255,255,.065));
 }
 
 /* ---------- Segmented controls ---------- */
-.theme-key-liquid-pin .support-status-tabs-list,
-.theme-key-liquid-pin .partner-tabs {
+.theme-key-liquid-pink .support-status-tabs-list,
+.theme-key-liquid-pink .partner-tabs {
   gap: 4px;
   padding: 5px;
   border-color: rgba(255,255,255,.065);
@@ -860,8 +860,8 @@ body:has(.theme-key-liquid-pin) .admin-select-item[data-selected] {
   box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
 }
 
-.theme-key-liquid-pin .support-status-tabs-trigger,
-.theme-key-liquid-pin .partner-tabs-trigger {
+.theme-key-liquid-pink .support-status-tabs-trigger,
+.theme-key-liquid-pink .partner-tabs-trigger {
   border: 0;
   border-radius: 12px;
   background: transparent;
@@ -869,14 +869,14 @@ body:has(.theme-key-liquid-pin) .admin-select-item[data-selected] {
   box-shadow: none;
 }
 
-.theme-key-liquid-pin .support-status-tabs-trigger:hover,
-.theme-key-liquid-pin .partner-tabs-trigger:hover {
+.theme-key-liquid-pink .support-status-tabs-trigger:hover,
+.theme-key-liquid-pink .partner-tabs-trigger:hover {
   background: rgba(255,255,255,.055);
   color: var(--text);
 }
 
-.theme-key-liquid-pin .support-status-tabs-trigger[data-state="active"],
-.theme-key-liquid-pin .partner-tabs-trigger[data-state="active"] {
+.theme-key-liquid-pink .support-status-tabs-trigger[data-state="active"],
+.theme-key-liquid-pink .partner-tabs-trigger[data-state="active"] {
   background:
     linear-gradient(145deg, rgba(255,255,255,.065), rgba(255,255,255,.01)),
     rgba(255,255,255,.105);
@@ -887,7 +887,7 @@ body:has(.theme-key-liquid-pin) .admin-select-item[data-selected] {
 }
 
 /* ---------- Admin switches: springy glass toggle ---------- */
-.theme-key-liquid-pin .admin-switch-root {
+.theme-key-liquid-pink .admin-switch-root {
   overflow: hidden;
   border-color: rgba(255,255,255,.08);
   background: rgba(255,255,255,.085);
@@ -902,7 +902,7 @@ body:has(.theme-key-liquid-pin) .admin-select-item[data-selected] {
     filter 320ms var(--lg-ease-soft);
 }
 
-.theme-key-liquid-pin .admin-switch-root[data-state="checked"] {
+.theme-key-liquid-pink .admin-switch-root[data-state="checked"] {
   border-color: color-mix(in srgb, var(--success) 28%, rgba(255,255,255,.08));
   background: color-mix(in srgb, var(--success) 36%, rgba(255,255,255,.075));
   box-shadow:
@@ -910,7 +910,7 @@ body:has(.theme-key-liquid-pin) .admin-select-item[data-selected] {
     0 5px 16px color-mix(in srgb, var(--success) 12%, transparent);
 }
 
-.theme-key-liquid-pin .admin-switch-thumb {
+.theme-key-liquid-pink .admin-switch-thumb {
   background: rgba(255,255,255,.86);
   box-shadow:
     0 3px 10px rgba(0,0,0,.22),
@@ -923,22 +923,22 @@ body:has(.theme-key-liquid-pin) .admin-select-item[data-selected] {
 }
 
 /* ---------- Progress, badges and small surfaces ---------- */
-.theme-key-liquid-pin .progress {
+.theme-key-liquid-pink .progress {
   background: rgba(255,255,255,.09);
   box-shadow: inset 0 1px 3px rgba(0,0,0,.10);
 }
 
-.theme-key-liquid-pin .progress span {
+.theme-key-liquid-pink .progress span {
   background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 78%, white), var(--accent));
   box-shadow: 0 0 18px color-mix(in srgb, var(--accent) 26%, transparent);
 }
 
-.theme-key-liquid-pin .admin-badge,
-.theme-key-liquid-pin .admin-cn-badge,
-.theme-key-liquid-pin .ticket-status-badge,
-.theme-key-liquid-pin .ticket-priority-badge,
-.theme-key-liquid-pin .ticket-message-role-badge,
-.theme-key-liquid-pin .premium-server-list span {
+.theme-key-liquid-pink .admin-badge,
+.theme-key-liquid-pink .admin-cn-badge,
+.theme-key-liquid-pink .ticket-status-badge,
+.theme-key-liquid-pink .ticket-priority-badge,
+.theme-key-liquid-pink .ticket-message-role-badge,
+.theme-key-liquid-pink .premium-server-list span {
   border-color: rgba(255,255,255,.12);
   background: rgba(7,15,24,.24);
   -webkit-backdrop-filter: blur(12px);
@@ -947,39 +947,39 @@ body:has(.theme-key-liquid-pin) .admin-select-item[data-selected] {
 }
 
 /* ---------- Tables ---------- */
-.theme-key-liquid-pin .admin-table tbody tr,
-.theme-key-liquid-pin table tbody tr {
+.theme-key-liquid-pink .admin-table tbody tr,
+.theme-key-liquid-pink table tbody tr {
   transition: background-color var(--lg-fast) ease, filter var(--lg-fast) ease;
 }
 
-.theme-key-liquid-pin .admin-table tbody tr:hover,
-.theme-key-liquid-pin table tbody tr:hover {
+.theme-key-liquid-pink .admin-table tbody tr:hover,
+.theme-key-liquid-pink table tbody tr:hover {
   background: rgba(255,255,255,.045);
 }
 
-.theme-key-liquid-pin .admin-table thead th,
-.theme-key-liquid-pin table thead th {
+.theme-key-liquid-pink .admin-table thead th,
+.theme-key-liquid-pink table thead th {
   color: var(--muted);
 }
 
 /* ---------- Scrollbars ---------- */
-.theme-key-liquid-pin {
+.theme-key-liquid-pink {
   scrollbar-width: thin;
   scrollbar-color: rgba(255,255,255,.20) transparent;
 }
 
-.theme-key-liquid-pin ::-webkit-scrollbar {
+.theme-key-liquid-pink ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
-.theme-key-liquid-pin ::-webkit-scrollbar-track { background: transparent; }
-.theme-key-liquid-pin ::-webkit-scrollbar-thumb {
+.theme-key-liquid-pink ::-webkit-scrollbar-track { background: transparent; }
+.theme-key-liquid-pink ::-webkit-scrollbar-thumb {
   border: 2px solid transparent;
   border-radius: 999px;
   background: rgba(255,255,255,.20);
   background-clip: padding-box;
 }
-.theme-key-liquid-pin ::-webkit-scrollbar-thumb:hover {
+.theme-key-liquid-pink ::-webkit-scrollbar-thumb:hover {
   background: rgba(255,255,255,.30);
   background-clip: padding-box;
 }
@@ -989,39 +989,39 @@ body:has(.theme-key-liquid-pin) .admin-select-item[data-selected] {
  * is composited over many elements that already have their own backdrop blur.
  * Keep the glass look, but reduce the number and area of live backdrop layers. */
 @media (max-width: 767px), (pointer: coarse) {
-  .theme-key-liquid-pin {
+  .theme-key-liquid-pink {
     --lg-blur: 12px;
     --lg-blur-heavy: 14px;
   }
 
-  .theme-key-liquid-pin .bottom-nav {
+  .theme-key-liquid-pink .bottom-nav {
     -webkit-backdrop-filter: blur(14px) saturate(1.25);
     backdrop-filter: blur(14px) saturate(1.25);
   }
 
-  .theme-key-liquid-pin .btn.btn-primary,
-  .theme-key-liquid-pin .admin-btn.admin-btn-primary,
-  .theme-key-liquid-pin .admin-extend-control .admin-btn.admin-btn-primary {
+  .theme-key-liquid-pink .btn.btn-primary,
+  .theme-key-liquid-pink .admin-btn.admin-btn-primary,
+  .theme-key-liquid-pink .admin-extend-control .admin-btn.admin-btn-primary {
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
   }
 
-  .theme-key-liquid-pin .input,
-  .theme-key-liquid-pin .textarea,
-  .theme-key-liquid-pin .admin-input,
-  .theme-key-liquid-pin .admin-textarea,
-  .theme-key-liquid-pin .admin-screen-wrap textarea,
-  .theme-key-liquid-pin .admin-dialog textarea,
-  .theme-key-liquid-pin .payment-method-select-trigger,
-  .theme-key-liquid-pin .support-select-trigger {
+  .theme-key-liquid-pink .input,
+  .theme-key-liquid-pink .textarea,
+  .theme-key-liquid-pink .admin-input,
+  .theme-key-liquid-pink .admin-textarea,
+  .theme-key-liquid-pink .admin-screen-wrap textarea,
+  .theme-key-liquid-pink .admin-dialog textarea,
+  .theme-key-liquid-pink .payment-method-select-trigger,
+  .theme-key-liquid-pink .support-select-trigger {
     -webkit-backdrop-filter: blur(8px) saturate(1.12);
     backdrop-filter: blur(8px) saturate(1.12);
   }
 
   /* A large modal already obscures most of the page. Using an opaque-enough
    * material here is visually almost identical but avoids a full-card backdrop pass. */
-  .theme-key-liquid-pin .dialog-card,
-  body:has(.theme-key-liquid-pin) .dialog-card {
+  .theme-key-liquid-pink .dialog-card,
+  body:has(.theme-key-liquid-pink) .dialog-card {
     background:
       linear-gradient(145deg, rgba(255,255,255,.105), rgba(255,255,255,.018) 52%, rgba(255,255,255,.045)),
       rgba(8,14,22,.96);
@@ -1030,15 +1030,15 @@ body:has(.theme-key-liquid-pin) .admin-select-item[data-selected] {
   }
 
   /* Never blur the entire viewport behind a dialog on touch devices. */
-  .theme-key-liquid-pin .dialog-backdrop,
-  body:has(.theme-key-liquid-pin) .dialog-backdrop {
+  .theme-key-liquid-pink .dialog-backdrop,
+  body:has(.theme-key-liquid-pink) .dialog-backdrop {
     background: rgba(2,5,9,.66);
     -webkit-backdrop-filter: none !important;
     backdrop-filter: none !important;
   }
 
   /* Small popovers can keep a little blur because their sampled area is tiny. */
-  .theme-key-liquid-pin .compact-traffic-help {
+  .theme-key-liquid-pink .compact-traffic-help {
     background:
       linear-gradient(145deg, rgba(255,255,255,.085), rgba(255,255,255,.018) 52%),
       rgba(7,14,24,.96);
@@ -1046,7 +1046,7 @@ body:has(.theme-key-liquid-pin) .admin-select-item[data-selected] {
     backdrop-filter: blur(8px) saturate(1.10);
   }
 
-  body:has(.theme-key-liquid-pin) :is(
+  body:has(.theme-key-liquid-pink) :is(
     .language-select-content,
     .support-select-content,
     .install-platform-content,
@@ -1059,7 +1059,7 @@ body:has(.theme-key-liquid-pin) .admin-select-item[data-selected] {
 
   /* While any dialog is open, stop paying for blur on surfaces hidden under
    * the scrim. This is the main reduction for long Settings screens. */
-  body:has(.theme-key-liquid-pin):has(.dialog) .theme-key-liquid-pin :is(
+  body:has(.theme-key-liquid-pink):has(.dialog) .theme-key-liquid-pink :is(
     .card,
     .settings-row,
     .option-row,
@@ -1078,7 +1078,7 @@ body:has(.theme-key-liquid-pin) .admin-select-item[data-selected] {
     backdrop-filter: none !important;
   }
 
-  body:has(.theme-key-liquid-pin):has(.dialog) .theme-key-liquid-pin.app-shell::before {
+  body:has(.theme-key-liquid-pink):has(.dialog) .theme-key-liquid-pink.app-shell::before {
     animation-play-state: paused !important;
     will-change: auto;
   }
@@ -1086,22 +1086,22 @@ body:has(.theme-key-liquid-pin) .admin-select-item[data-selected] {
 
 /* ---------- Motion accessibility ---------- */
 @media (prefers-reduced-motion: reduce) {
-  .theme-key-liquid-pin.app-shell,
-  .theme-key-liquid-pin.app-shell::before {
+  .theme-key-liquid-pink.app-shell,
+  .theme-key-liquid-pink.app-shell::before {
     animation: none !important;
   }
 
-  .theme-key-liquid-pin .btn,
-  .theme-key-liquid-pin .admin-btn,
-  .theme-key-liquid-pin .card,
-  .theme-key-liquid-pin .period-card,
-  .theme-key-liquid-pin .method-card,
-  .theme-key-liquid-pin .settings-row,
-  .theme-key-liquid-pin .option-row,
-  .theme-key-liquid-pin .ticket-card,
-  .theme-key-liquid-pin .bottom-nav button,
-  .theme-key-liquid-pin .admin-switch-root,
-  .theme-key-liquid-pin .admin-switch-thumb {
+  .theme-key-liquid-pink .btn,
+  .theme-key-liquid-pink .admin-btn,
+  .theme-key-liquid-pink .card,
+  .theme-key-liquid-pink .period-card,
+  .theme-key-liquid-pink .method-card,
+  .theme-key-liquid-pink .settings-row,
+  .theme-key-liquid-pink .option-row,
+  .theme-key-liquid-pink .ticket-card,
+  .theme-key-liquid-pink .bottom-nav button,
+  .theme-key-liquid-pink .admin-switch-root,
+  .theme-key-liquid-pink .admin-switch-thumb {
     transition: none !important;
     animation: none !important;
   }
@@ -1109,11 +1109,11 @@ body:has(.theme-key-liquid-pin) .admin-select-item[data-selected] {
 
 /* ---------- Backdrop-filter fallback ---------- */
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .theme-key-liquid-pin .card,
-  .theme-key-liquid-pin .dialog-card,
-  .theme-key-liquid-pin .bottom-nav,
-  .theme-key-liquid-pin .admin-card,
-  .theme-key-liquid-pin .admin-cn-card[data-slot="card"] {
+  .theme-key-liquid-pink .card,
+  .theme-key-liquid-pink .dialog-card,
+  .theme-key-liquid-pink .bottom-nav,
+  .theme-key-liquid-pink .admin-card,
+  .theme-key-liquid-pink .admin-cn-card[data-slot="card"] {
     background-color: rgba(10, 16, 24, 0.90);
   }
 }
