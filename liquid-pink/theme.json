@@ -1,5 +1,5 @@
 {
-  "key": "liquid-pink",
+  "key": "liquid-pin",
   "names": {
     "ru": "Liquid Glass (pink)",
     "en": "Liquid Glass (pink)"
@@ -16,7 +16,7 @@
   "variants": {
     "dark": {
       "color_scheme": "dark",
-      "accent": "#527462",
+      "accent": "#ef71b0",
       "bg": "#07090d",
       "panel": "rgba(10, 16, 24, 0.46)",
       "panel_2": "rgba(7, 13, 20, 0.50)",
