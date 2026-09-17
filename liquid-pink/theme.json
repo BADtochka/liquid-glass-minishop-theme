@@ -1,8 +1,8 @@
 {
-  "key": "liquid",
+  "key": "liquid-pink",
   "names": {
-    "ru": "Liquid Glass",
-    "en": "Liquid Glass"
+    "ru": "Liquid Glass (pink)",
+    "en": "Liquid Glass (pink)"
   },
   "enabled": true,
   "default": false,
