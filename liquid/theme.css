@@ -48,29 +48,19 @@
   --lg-motion: 320ms;
   --lg-slow: 520ms;
 
-  /* Re-assert the default semantic palette through glass-friendly surfaces. */
-  --bg: #07090d;
-  --panel: rgba(10, 16, 24, 0.46);
-  --panel-2: rgba(7, 13, 20, 0.50);
-  --panel-3: rgba(17, 25, 36, 0.66);
-  --border: rgba(255, 255, 255, 0.13);
-  --border-strong: rgba(255, 255, 255, 0.24);
-  --text: rgba(255, 255, 255, 0.96);
-  --muted: rgba(255, 255, 255, 0.74);
-  --dim: rgba(255, 255, 255, 0.52);
-  --radius: var(--lg-radius);
-  --surface-sheen: rgba(255, 255, 255, 0.105);
-  --surface-sheen-soft: rgba(255, 255, 255, 0.022);
-  --surface-hover: rgba(255, 255, 255, 0.075);
-  --surface-muted: rgba(255, 255, 255, 0.050);
-  --surface-subtle: rgba(255, 255, 255, 0.032);
-  --surface-subtle-border: rgba(255, 255, 255, 0.09);
-  --nav-bg: rgba(8, 14, 22, 0.46);
-  --rail-bg: rgba(7, 13, 20, 0.42);
-  --shadow-soft: 0 18px 46px rgba(0, 0, 0, 0.20), 0 4px 16px rgba(0, 0, 0, 0.12);
-  --shadow-strong: var(--lg-shadow-hover);
-  --shadow-popover: 0 24px 58px rgba(0, 0, 0, 0.34), 0 8px 22px rgba(0, 0, 0, 0.18);
-  --inset-highlight: rgba(255, 255, 255, 0.18);
+  /* Semantic colors are owned by Minishop's Theme API. Derive the Liquid
+   * material from those runtime tokens instead of freezing a blue-black tint. */
+  --lg-glass-surface: color-mix(in srgb, var(--panel) 65%, transparent);
+  --lg-glass-surface-dense: color-mix(in srgb, var(--panel-2) 84%, transparent);
+  --lg-glass-surface-active: color-mix(in srgb, var(--panel) 74%, transparent);
+  --lg-glass-button: color-mix(in srgb, var(--panel-2) 56%, transparent);
+  --lg-glass-button-hover: color-mix(in srgb, var(--panel-2) 68%, transparent);
+  --lg-glass-popover: color-mix(in srgb, var(--panel-3) 94%, var(--bg) 6%);
+  --lg-glass-popover-strong: color-mix(in srgb, var(--panel-3) 65%, var(--bg) 35%);
+  --lg-glass-opaque: color-mix(in srgb, var(--panel-3) 18%, var(--bg) 82%);
+  --lg-glass-mobile-solid: color-mix(in srgb, var(--panel-3) 12%, var(--bg) 88%);
+  --lg-glass-fallback: color-mix(in srgb, var(--panel-3) 30%, var(--bg) 70%);
+  --lg-glass-badge: color-mix(in srgb, var(--panel) 52%, transparent);
 
   --admin-bg: var(--bg);
   --admin-surface: var(--panel);
@@ -140,7 +130,7 @@ body:has(.theme-key-liquid),
 .theme-key-liquid.app-shell {
   position: relative;
   isolation: isolate;
-  background: #07090d !important;
+  background: var(--bg) !important;
 }
 
 /* The source kit used a dedicated fixed scene layer. A pseudo-element keeps
@@ -285,7 +275,7 @@ body:has(.theme-key-liquid) .dialog {
   border-color: var(--lg-line-soft);
   background:
     linear-gradient(145deg, rgba(255,255,255,var(--lg-glass-hi)), rgba(255,255,255,.025) 48%, rgba(255,255,255,.07)),
-    rgba(7,14,24,.30);
+    var(--lg-glass-surface);
   -webkit-backdrop-filter: blur(var(--lg-blur)) saturate(1.55) contrast(1.06);
   backdrop-filter: blur(var(--lg-blur)) saturate(1.55) contrast(1.06);
   box-shadow:
@@ -304,7 +294,7 @@ body:has(.theme-key-liquid) .dialog {
 .theme-key-liquid .pending-payment-card {
   background:
     linear-gradient(145deg, rgba(255,255,255,.13), rgba(255,255,255,.02) 46%, rgba(255,255,255,.055)),
-    rgba(7,14,24,.42);
+    var(--lg-glass-surface-dense);
 }
 
 /* ---------- Cards and clickable surfaces ---------- */
@@ -365,7 +355,7 @@ body:has(.theme-key-liquid) .dialog {
   border-color: color-mix(in srgb, var(--accent) 42%, rgba(255,255,255,.20));
   background:
     linear-gradient(145deg, color-mix(in srgb, var(--accent) 16%, rgba(255,255,255,.12)), rgba(255,255,255,.025) 52%),
-    rgba(7,14,24,.34);
+    var(--lg-glass-surface-active);
   box-shadow:
     0 14px 34px rgba(0,0,0,.19),
     0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent),
@@ -475,7 +465,7 @@ body:has(.theme-key-liquid) .dialog {
     border-radius: 0 !important;
     background:
       radial-gradient(110% 50% at 0% 0%, rgba(255,255,255,.08), transparent 58%),
-      rgba(7,13,20,.42) !important;
+      var(--rail-bg) !important;
     -webkit-backdrop-filter: blur(28px) saturate(1.5) !important;
     backdrop-filter: blur(28px) saturate(1.5) !important;
     box-shadow:
@@ -488,7 +478,7 @@ body:has(.theme-key-liquid) .dialog {
   border-color: color-mix(in srgb, var(--accent) 24%, rgba(255,255,255,.14));
   background:
     linear-gradient(145deg, color-mix(in srgb, var(--accent) 13%, rgba(255,255,255,.09)), rgba(255,255,255,.025) 58%),
-    rgba(7,13,20,.28);
+    var(--lg-glass-button);
   color: var(--text);
   text-shadow: 0 1px 2px rgba(0,0,0,.16);
   -webkit-backdrop-filter: blur(18px) saturate(1.35);
@@ -503,7 +493,7 @@ body:has(.theme-key-liquid) .dialog {
   border-color: color-mix(in srgb, var(--accent) 34%, rgba(255,255,255,.17));
   background:
     linear-gradient(145deg, color-mix(in srgb, var(--accent) 18%, rgba(255,255,255,.105)), rgba(255,255,255,.035) 58%),
-    rgba(7,13,20,.34);
+    var(--lg-glass-button-hover);
 }
 
 .theme-key-liquid .btn.btn-primary:active:not(:disabled) {
@@ -628,8 +618,8 @@ body:has(.theme-key-liquid) .dialog {
 .theme-key-liquid [role="button"]:focus-visible {
   outline: 0;
   box-shadow:
-    0 0 0 3px rgba(174,221,255,.13),
-    0 0 0 1px rgba(225,244,255,.34);
+    0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--accent) 48%, rgba(255,255,255,.34));
 }
 
 /* ---------- Floating navigation / rail ---------- */
@@ -638,7 +628,7 @@ body:has(.theme-key-liquid) .dialog {
   border-radius: 22px;
   background:
     radial-gradient(100% 170% at 8% 0%, rgba(255,255,255,.13), transparent 48%),
-    rgba(8,14,22,.46);
+    var(--nav-bg);
   -webkit-backdrop-filter: blur(26px) saturate(1.6) contrast(1.04);
   backdrop-filter: blur(26px) saturate(1.6) contrast(1.04);
   box-shadow:
@@ -682,7 +672,7 @@ body:has(.theme-key-liquid) .dialog {
     border-right: 1px solid rgba(255,255,255,.13) !important;
     background:
       radial-gradient(110% 50% at 0% 0%, rgba(255,255,255,.08), transparent 58%),
-      rgba(7,13,20,.42) !important;
+      var(--rail-bg) !important;
     -webkit-backdrop-filter: blur(28px) saturate(1.5) !important;
     backdrop-filter: blur(28px) saturate(1.5) !important;
     box-shadow:
@@ -709,7 +699,7 @@ body:has(.theme-key-liquid) .dialog {
   border-color: color-mix(in srgb, var(--accent) 34%, rgba(255,255,255,.18));
   background:
     linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.025) 52%),
-    rgba(7,14,24,.94);
+    var(--lg-glass-opaque);
   color: var(--text);
   -webkit-backdrop-filter: blur(22px) saturate(1.30);
   backdrop-filter: blur(22px) saturate(1.30);
@@ -791,6 +781,19 @@ body:has(.theme-key-liquid) .dialog {
 }
 
 /* ---------- Popovers / dialogs / portals ---------- */
+/* Liquid hover/active transforms create stacking contexts on settings rows.
+ * Keep the open language row and Bits UI floating wrapper above sibling cards,
+ * while remaining below full-screen dialogs (z-index: 220). */
+.theme-key-liquid .settings-list.settings-list--language-open .settings-row-language {
+  position: relative;
+  z-index: 160;
+}
+
+body:has(.theme-key-liquid) [data-bits-floating-content-wrapper]:has(.language-select-content),
+body:has(.theme-key-liquid) .language-select-content {
+  z-index: 180 !important;
+}
+
 .theme-key-liquid .dialog-card,
 .theme-key-liquid .app-toast,
 .theme-key-liquid .language-select-content,
@@ -802,7 +805,7 @@ body:has(.theme-key-liquid) .dialog {
   border-color: rgba(255,255,255,.16);
   background:
     linear-gradient(145deg, rgba(255,255,255,.15), rgba(255,255,255,.025) 48%, rgba(255,255,255,.055)),
-    rgba(7,14,24,.68);
+    var(--lg-glass-popover);
   -webkit-backdrop-filter: blur(var(--lg-blur-heavy)) saturate(1.5) contrast(1.05);
   backdrop-filter: blur(var(--lg-blur-heavy)) saturate(1.5) contrast(1.05);
   box-shadow:
@@ -819,7 +822,7 @@ body:has(.theme-key-liquid) .field-error-tooltip {
   border-color: rgba(255,255,255,.16);
   background:
     linear-gradient(145deg, rgba(255,255,255,.15), rgba(255,255,255,.025) 48%, rgba(255,255,255,.055)),
-    rgba(7,14,24,.78);
+    var(--lg-glass-popover-strong);
   color: var(--text);
   -webkit-backdrop-filter: blur(30px) saturate(1.5);
   backdrop-filter: blur(30px) saturate(1.5);
@@ -940,7 +943,7 @@ body:has(.theme-key-liquid) .admin-select-item[data-selected] {
 .theme-key-liquid .ticket-message-role-badge,
 .theme-key-liquid .premium-server-list span {
   border-color: rgba(255,255,255,.12);
-  background: rgba(7,15,24,.24);
+  background: var(--lg-glass-badge);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
@@ -1024,7 +1027,7 @@ body:has(.theme-key-liquid) .admin-select-item[data-selected] {
   body:has(.theme-key-liquid) .dialog-card {
     background:
       linear-gradient(145deg, rgba(255,255,255,.105), rgba(255,255,255,.018) 52%, rgba(255,255,255,.045)),
-      rgba(8,14,22,.96);
+      var(--lg-glass-mobile-solid);
     -webkit-backdrop-filter: none !important;
     backdrop-filter: none !important;
   }
@@ -1041,7 +1044,7 @@ body:has(.theme-key-liquid) .admin-select-item[data-selected] {
   .theme-key-liquid .compact-traffic-help {
     background:
       linear-gradient(145deg, rgba(255,255,255,.085), rgba(255,255,255,.018) 52%),
-      rgba(7,14,24,.96);
+      var(--lg-glass-mobile-solid);
     -webkit-backdrop-filter: blur(8px) saturate(1.10);
     backdrop-filter: blur(8px) saturate(1.10);
   }
@@ -1114,6 +1117,6 @@ body:has(.theme-key-liquid) .admin-select-item[data-selected] {
   .theme-key-liquid .bottom-nav,
   .theme-key-liquid .admin-card,
   .theme-key-liquid .admin-cn-card[data-slot="card"] {
-    background-color: rgba(10, 16, 24, 0.90);
+    background-color: var(--lg-glass-fallback);
   }
 }
