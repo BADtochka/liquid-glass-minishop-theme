@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "version": "1.4.1",
+  "version": "1.4.2",
   "license": "UNLICENSED",
   "description": {
-    "ru": "Liquid Glass для Remnawave Minishop: стеклянные поверхности следуют runtime-палитре темы, без фиксированного синего оттенка; сохранены оптимизации Telegram/Android и предыдущие UI-исправления.",
-    "en": "Liquid Glass for Remnawave Minishop: glass surfaces now follow the runtime theme palette without a fixed blue tint, while keeping Telegram/Android optimizations and previous UI fixes."
+    "ru": "Liquid Glass для Remnawave Minishop: стеклянные поверхности следуют runtime-палитре темы, исправлен stacking dropdown выбора языка; сохранены оптимизации Telegram/Android и предыдущие UI-исправления.",
+    "en": "Liquid Glass for Remnawave Minishop: glass surfaces follow the runtime theme palette and the language dropdown stacking order is fixed, while keeping Telegram/Android optimizations and previous UI fixes."
   },
   "compatibility": {
     "theme_api": 1
