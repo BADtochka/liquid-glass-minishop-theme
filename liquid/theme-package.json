@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "version": "1.4.4",
+  "version": "1.4.5",
   "license": "UNLICENSED",
   "description": {
-    "ru": "Liquid Glass для Remnawave Minishop: стеклянные поверхности следуют runtime-палитре, исправлены z-index выбора языка, accent кнопки продления и радиус пунктов admin rail.",
-    "en": "Liquid Glass for Remnawave Minishop: glass surfaces follow the runtime palette, with fixed language dropdown stacking, subscription renewal accent, and admin rail item radius."
+    "ru": "Liquid Glass для Remnawave Minishop: стеклянные поверхности и навигация следуют runtime-палитре; исправлены z-index выбора языка, accent кнопки продления и геометрия admin rail.",
+    "en": "Liquid Glass for Remnawave Minishop: glass surfaces and navigation follow the runtime palette, with fixed language dropdown stacking, subscription renewal accent, and admin rail geometry."
   },
   "compatibility": {
     "theme_api": 1
