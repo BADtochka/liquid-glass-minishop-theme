@@ -416,7 +416,7 @@ body:has(.theme-key-liquid) .dialog {
 /* ---------- Admin rail: same interaction language as the user rail ---------- */
 .theme-key-liquid .admin-nav-item {
   border-color: transparent !important;
-  border-radius: 14px;
+  border-radius: 10px;
   background: transparent !important;
   background-image: none !important;
   color: var(--admin-muted, var(--muted));
