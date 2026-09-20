@@ -781,6 +781,19 @@ body:has(.theme-key-liquid) .dialog {
 }
 
 /* ---------- Popovers / dialogs / portals ---------- */
+/* Liquid hover/active transforms create stacking contexts on settings rows.
+ * Keep the open language row and Bits UI floating wrapper above sibling cards,
+ * while remaining below full-screen dialogs (z-index: 220). */
+.theme-key-liquid .settings-list.settings-list--language-open .settings-row-language {
+  position: relative;
+  z-index: 160;
+}
+
+body:has(.theme-key-liquid) [data-bits-floating-content-wrapper]:has(.language-select-content),
+body:has(.theme-key-liquid) .language-select-content {
+  z-index: 180 !important;
+}
+
 .theme-key-liquid .dialog-card,
 .theme-key-liquid .app-toast,
 .theme-key-liquid .language-select-content,
