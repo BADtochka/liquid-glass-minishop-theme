@@ -1,3 +1,0 @@
-UNLICENSED
-
-The included background image originates from the user-supplied UI kit. No upstream license information was provided.
