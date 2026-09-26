@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "version": "1.5.0",
+  "license": "UNLICENSED",
+  "description": {
+    "ru": "Liquid Glass — Pink для Remnawave Minishop: тёмная бордово-розовая палитра по референсу, стеклянные поверхности Liquid и плавающая верхняя навигация на desktop вместо левого rail.",
+    "en": "Liquid Glass — Pink for Remnawave Minishop: a dark burgundy-pink reference palette, Liquid glass surfaces, and a floating desktop top navigation bar instead of the left rail."
+  },
+  "compatibility": {
+    "theme_api": 1
+  },
+  "preview": "preview.webp"
+}
