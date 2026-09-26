@@ -719,13 +719,33 @@ body:has(.theme-key-liquid-pink) .dialog {
 }
 
 @media (min-width: 1024px) {
-  .theme-key-liquid-pink.app-shell {
+  /* The public navigation is moved to the top, but the admin layout still
+   * depends on Core's desktop rail width to reserve space for .admin-sidebar.
+   * Do not zero the rail variable when the admin screen is mounted. */
+  .theme-key-liquid-pink.app-shell:not(:has(.admin-screen-wrap)) {
     --desktop-rail-width: 0px;
   }
 
   .theme-key-liquid-pink .phone-screen,
   .theme-key-liquid-pink .phone-screen.home-screen {
-    padding-top: 104px;
+    padding-top: 96px;
+  }
+
+  /* Core sizes HomeScreen for the regular desktop rail/bottom-nav geometry.
+   * Once the navigation is moved above the page, that old min-height plus the
+   * new top padding can make the home view taller than the viewport. */
+  .theme-key-liquid-pink .phone-screen.home-screen {
+    min-height: 100dvh;
+    height: 100dvh;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+
+  .theme-key-liquid-pink .phone-screen.home-screen > .home-layout {
+    min-height: 0 !important;
+    height: 100%;
+    max-height: calc(100dvh - 96px);
+    box-sizing: border-box;
   }
 
   .theme-key-liquid-pink.app-shell .bottom-nav {
